@@ -1,0 +1,18 @@
+<h2>User info</h2>
+<% if user.image.attached? %>
+  <%= image_tag user.image %>
+<% else %>
+  <%= image_tag 'default-image' %>
+<% end %>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>name</th>
+      <th><%= user.name %></th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th><%= user.introduction %></th>
+    </tr>
+  </tbody>
+</table>
