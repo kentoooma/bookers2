@@ -9,5 +9,30 @@
       </div>
       <%= render 'layouts/newbook', book: @newbook %>
     </div>
+    <div class='col-md-8 offset-md-1'>
+      <h2>Book detail</h2>
+      <table class='table'>
+        <tr>
+          <td>
+            <% if @book.user.image.attached? %>
+              <%= image_tag @book.user.image %>
+            <% else %>
+              <%= image_tag 'default-image' %>
+            <% end %>
+            <p><%= link_to @book.user.name, user_path(@book.user.id) %></p>
+          </td>
+          <td><%= link_to @book.title, book_path(@book.id) %></td>
+          <td><%= @book.body %></td>
+          <% if @book.user == current_user %>
+          <td>
+            <%= link_to "Edit", edit_book_path, class: "btn btn-sm btn-success" %>
+          </td>
+          <td>
+            <%= link_to "Destroy", book_path(@book.id), method: :delete, class: "btn btn-sm btn-danger", "data-confirm" => "本当に削除しますか？" %>
+          </td>  
+          <% end %>
+        </tr>
+      </table>
+    </div>
   </div>
 </div>
