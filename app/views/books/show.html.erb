@@ -14,10 +14,10 @@
       <table class='table'>
         <tr>
           <td>
-            <% if @book.user.image.attached? %>
-              <%= image_tag @book.user.image %>
+            <% if @book.user.profile_image.attached? %>
+              <%= image_tag @book.user.profile_image, size: "100x100" %>
             <% else %>
-              <%= image_tag 'default-image' %>
+              <%= image_tag 'default-image', size: "100x100" %>
             <% end %>
             <p><%= link_to @book.user.name, user_path(@book.user.id) %></p>
           </td>

@@ -25,8 +25,8 @@
           <% @users.each do |user| %>
             <tr>
               <td>
-                <% if user.image.attached? %>
-                  <%= image_tag user.image, size: "80x80"%>
+                <% if user.profile_image.attached? %>
+                  <%= image_tag user.profile_image, size: "80x80"%>
                 <% else %>
                   <%= image_tag 'default-image', size: "80x80" %>
                 <% end %>
